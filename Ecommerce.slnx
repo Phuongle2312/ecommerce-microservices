@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/BuildingBlocks.Contracts/BuildingBlocks.Contracts.csproj" />
+    <Project Path="src/BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj" />
+  </Folder>
+  <Folder Name="/Services/">
+    <Project Path="src/Services/Basket/Basket.Api/Basket.Api.csproj" />
+    <Project Path="src/Services/Catalog/Catalog.Api/Catalog.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/ApiGateway/ApiGateway.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "BuildingBlocks.Contracts.Catalog";
+
+package catalog.v1;
+
+// Internal service-to-service API exposed by Catalog. External clients use REST via the gateway.
+service CatalogGrpc {
+  rpc GetProduct (GetProductRequest) returns (ProductReply);
+  rpc GetProducts (GetProductsRequest) returns (GetProductsReply);
+}
+
+message GetProductRequest {
+  string id = 1; // Guid
+}
+
+message GetProductsRequest {
+  repeated string ids = 1;
+}
+
+message ProductReply {
+  string id = 1;
+  string name = 2;
+  // Price in minor units is avoided for readability; decimal serialized as string to keep precision.
+  string price = 3;
+  int32 available_stock = 4;
+}
+
+message GetProductsReply {
+  repeated ProductReply products = 1;
+}
